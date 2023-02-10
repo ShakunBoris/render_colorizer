@@ -1,0 +1,81 @@
+{% extends 'front/layout.html' %} {% load static %} 
+{% block title %} 
+Alex Vikulov: Colorizer 
+{% endblock %} 
+{% block style %} 
+<link rel='stylesheet' type="text/css" href="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.css">
+{% endblock%} 
+{% block body %} 
+{% comment %} <img src={%static 'front/img/arab.jpg'%} alt="asd"> {% endcomment %}
+<div class="nav-bar">
+  logo
+  <ul>
+    <li><a href="{% url 'front:contact' %}"> Contact </a></li>
+    <li><a href="#"> Second </a></li>
+  </ul>
+</div>
+<div class="sect1 sect wow bounceInDown">
+  <h1 id="h1">Alex Vikulov</h1>
+</div>
+<div class="sect2">
+  <h2>html</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni dolorum
+    recusandae tenetur sapiente dolore facere, provident sed perspiciatis,
+    consequatur in quis esse ipsam voluptas mollitia hic obcaecati quibusdam
+    suscipit nihil?
+  </p>
+</div>
+<div class="sectvideo wow bounceInRight">
+  <h1 class="video-text">Colorizing example</h1>
+  <div class="video-container">
+    <video
+      id="background-video"
+      autoplay
+      loop
+      muted
+      poster="{% static 'front/img/negra.jpg' %}"
+    >
+      <source src="{% static 'front/img/negra_video.mp4' %}" type="video/mp4" />
+    </video>
+  </div>
+</div>
+<div class="sect2">
+  <h2>Some crap</h2>
+  <p>Some crap</p>
+</div>
+<div class="sect3 sect wow bounceInRight" >Some Crap</div>
+<div class="sect2">
+  <h2>Weddings .sect2 h2</h2>
+  <p>
+    .sect2 p Capture the Happiest Moments of Your Life. Wedding night included.
+  </p>
+</div>
+<div class="sect4 sect wow bounceInRight">sect4 sect content</div>
+<div class="sect2">
+  <h2>Before-After Bar</h2>
+  <p>.sect2 p Before-After goes here:</p>
+</div>
+{% comment %} NOT RESPONSIVE {% endcomment %}
+{% comment %} <div class="sect-before-after overflow-hidden">
+  <div class="image before"></div>
+  <div class="image after wow bounceInRight"></div>
+
+  <input type="range" class="slider" min="1" max="100" value="50" />
+  <div class="slider-button"></div>
+</div> {% endcomment %}
+<div class="img-compare">
+  <div id="image-compare">
+    <img src="{% static 'front\img\fc_edward_sleepy.webp'%}" alt="before" />
+    <img src="{% static 'front\img\fc_edward_suicide.webp'%}" alt="after" />
+  </div>
+</div>
+{%endblock%} {% block script %}
+<script src="{% static 'front/before-after.js' %}"></script>
+<script src="{% static 'front/wow.min.js' %}"></script>
+<script>
+  new WOW().init();
+</script>
+<script src="{% static 'front/image-compare.js' %}"></script>
+<script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
+{% endblock %}
